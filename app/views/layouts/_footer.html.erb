@@ -1,0 +1,230 @@
+
+
+
+
+
+
+<!--FOOTER 1-->
+<footer class="footer1">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="footer-desc text-center">
+            <h3><%= link_to departments_path do %>
+              <i class="glyphicon glyphicon-cloud"> AeroSanidad</i>
+              <% end %>
+            </h3>
+            <p>
+              Este sistema permite crear y mantener Historias Clínicas Electrónicas de sus pacientes
+            </p>
+          </div>
+        </div>
+
+
+        <div class="menu-footer">
+          <ul class="list-inline">
+                <li><%= link_to epses_path do %>
+                    <i class="glyphicon glyphicon-stats"> Epses</i>
+                <% end %></li>
+                <li><%= link_to arles_path do %>
+                    <i class="glyphicon glyphicon-signal"> Arles</i>
+                <% end %></li>
+                <li><%= link_to countries_path do %>
+                    <i class="glyphicon glyphicon-list-alt"> Paises</i>
+                <% end %></li>
+                <li><%= link_to departments_path do %>
+                    <i class="glyphicon glyphicon-th-list"> Departamentos</i>
+                <% end %></li>
+                <li><%= link_to cities_path do %>
+                    <i class="glyphicon glyphicon-road"> Ciudades</i>
+                <% end %></li>
+                <li><%= link_to patients_path do %>
+                    <i class="glyphicon glyphicon-user"> Pascientes</i>
+                <% end %></li>
+          </ul>
+        </div>
+
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ui-group-buttons">
+                        <button type="button" class="btn btn-primary">Ingresa</button>
+                        <div class="or"></div>
+                        <button type="button" class="button btn btn-success">Registrarte</button>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+
+
+        <style type="text/css">
+        .ui-group-buttons .or{position:relative;float:left;width:.3em;height:1.3em;z-index:3;font-size:12px}
+        .ui-group-buttons .or:before{position:absolute;top:50%;left:50%;content:'or';background-color:#5a5a5a;margin-top:-.1em;margin-left:-.9em;width:1.8em;height:1.8em;line-height:1.55;color:#fff;font-style:normal;font-weight:400;text-align:center;border-radius:500px;-webkit-box-shadow:0 0 0 1px rgba(0,0,0,0.1);box-shadow:0 0 0 1px rgba(0,0,0,0.1);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+        .ui-group-buttons .or:after{position:absolute;top:0;left:0;content:' ';width:.3em;height:2.84em;background-color:rgba(0,0,0,0);border-top:.6em solid #5a5a5a;border-bottom:.6em solid #5a5a5a}
+        .ui-group-buttons .or.or-lg{height:1.3em;font-size:16px}
+        .ui-group-buttons .or.or-lg:after{height:2.85em}
+        .ui-group-buttons .or.or-sm{height:1em}
+        .ui-group-buttons .or.or-sm:after{height:2.5em}
+        .ui-group-buttons .or.or-xs{height:.25em}
+        .ui-group-buttons .or.or-xs:after{height:1.84em;z-index:-1000}
+        .ui-group-buttons{display:inline-block;vertical-align:middle}
+        .ui-group-buttons:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .ui-group-buttons .btn{float:left;border-radius:0}
+        .ui-group-buttons .btn:first-child{margin-left:0;border-top-left-radius:.25em;border-bottom-left-radius:.25em;padding-right:15px}
+        .ui-group-buttons .btn:last-child{border-top-right-radius:.25em;border-bottom-right-radius:.25em;padding-left:15px}
+        </style>
+      </div> <!--/.row--> 
+    </div> <!--/.container--> 
+  </div> <!--/.footer-->
+                  
+  <div class="footer-bottom">
+      <div class="container">
+          <div class="pull-left"> Copyright © 2015 - www.aerosanidadsas.com | All Rights Reserved</div>
+          <div class="pull-right">
+              <ul>
+                  <li><a href="">Inicio</a></li>
+                  <li><a href="">Pascientes</a></li>
+                  <li><a href="">Ciudades</a></li>
+                  <li><a href="">Eps</a></li>
+              </ul> 
+          </div>
+      </div>
+  </div> <!--/.footer-bottom--> 
+</footer>
+
+
+<style type="text/css">
+  @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,800,800italic,900,900italic);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;    
+}
+
+.btn, .form-control {
+    border-radius: 2px;
+    box-shadow: none !important;
+}
+
+/*FOOTER 1*/
+.footer1 a {
+    color: #DDD;
+}
+
+.footer1 a:hover,
+.footer1 a:focus,
+.footer1 a:active {
+    color: #FFF;
+}
+
+.footer1 .footer {
+    background-color: #2E3436;
+    padding: 35px 0;
+    margin-top: 5em;
+}
+
+.footer1 .footer .footer-desc p {
+    color: #DDD;
+  margin: 15px 0 8px;
+}
+
+.footer1 .footer .social {
+    margin: 0 auto;
+    display: table;
+}
+
+.footer1 .footer .social li {
+    float: left;
+}
+
+.footer1 .footer .social li a {
+  display: block;
+    font-size: 1em;
+    color: #DDD;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #222728;
+    border-radius: 2px;
+    margin: 15px 4px
+}
+
+.footer1 .footer .social li a:hover {
+    background-color: #3A4144;
+}
+
+.footer1 .footer .input-group {
+    margin: 15px 0;
+}
+
+.footer1 .footer .form-control {
+    border-radius: 2px 0 0 2px;
+    background-color: #585C5D;
+    border-color: #585C5D;
+    color: #DDD;
+    font-size: 15px;
+}
+
+.footer1 .footer .form-control:hover,
+.footer1 .footer .form-control:focus {
+    border: 1px solid #222728;
+    background-color: #222728;
+}
+
+.footer1 .footer .input-group-addon {
+    border-radius: 0 2px 2px 0;
+    background-color: #F7931D;
+    color: #FFF;
+    border-color: #F7931D;
+    font-size: 15px;
+}
+
+.footer1 .footer-bottom {
+    background-color: #222728;
+    padding: 15px 0;
+    color: #DDD;
+    font-size: 13px;
+}
+
+.footer1 .footer-bottom ul li {
+    display: inline-block;
+}
+
+.footer1 .footer-bottom ul li a {
+    display: block;
+    padding-left: 8px;
+}
+
+.footer1 .footer-bottom ul li a:after {
+    content: "-";
+    padding-left: 8px;
+}
+
+.footer1 .footer-bottom ul li:last-child a:after {
+    content: "";
+}
+
+@media (max-width: 550px) {
+  .footer1 .footer-bottom .pull-left,
+  .footer1 .footer-bottom .pull-right {
+    float: none !important;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+}
+</style>
