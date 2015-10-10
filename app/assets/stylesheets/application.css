@@ -23,5 +23,14 @@
 	background-color: #1F809D !important;
 }
 
-body{
+.color-blanco{
+	color: #FFFFFF !important;
+}
+
+.color-blanco:hover{
+	    background-color: #000000 !important;
+}
+
+.color-negro{
+	background-color: #FFFFFF !important;
 }

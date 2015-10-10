@@ -1,81 +1,195 @@
+
+
 <div >
     <div>
         <div class="well">
         <h1 class="text-center">Listado de Pascientes</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item active">
-                <div class="media col-md-3">
-                    <figure class="pull-left">
-                        <img class="media-object img-rounded img-responsive"  src="http://placehold.it/350x250" alt="placehold.it/350x250" >
-                    </figure>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> List group heading </h4>
-                    <p class="list-group-item-text"> Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum. 
-                    </p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <h2> 14240 <small> votes </small></h2>
-                    <button type="button" class="btn btn-default btn-lg btn-block"> Vote Now! </button>
-                    <div class="stars">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </div>
-                    <p> Average 4.5 <small> / </small> 5 </p>
-                </div>
-          </a>
-          <a href="#" class="list-group-item">
-                <div class="media col-md-3">
-                    <figure class="pull-left">
-                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250" >
-                    </figure>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> List group heading </h4>
-                    <p class="list-group-item-text"> Eu eum corpora torquatos, ne postea constituto mea, quo tale lorem facer no. Ut sed odio appetere partiendo, quo meliore salutandi ex. Vix an sanctus vivendo, sed vocibus accumsan petentium ea. 
-                    </p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <h2> 12424 <small> votes </small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
-                    <div class="stars">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </div>
-                    <p> Average 3.9 <small> / </small> 5 </p>
-                </div>
-          </a>
-          <a href="#" class="list-group-item">
-                <div class="media col-md-3">
-                    <figure class="pull-left">
-                        <img class="media-object img-rounded img-responsive" src="http://placehold.it/350x250" alt="placehold.it/350x250">
-                    </figure>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="list-group-item-heading"> List group heading </h4>
-                    <p class="list-group-item-text"> Ut mea viris eripuit theophrastus, cu ponderum accusata consequuntur cum. Suas quaestio cotidieque pro ea. Nam nihil persecuti philosophia id, nam quot populo ea. 
-                    </p>
-                </div>
-                <div class="col-md-3 text-center">
-                    <h2> 13540 <small> votes </small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Vote Now!</button>
-                    <div class="stars">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    </div>
-                    <p> Average 4.1 <small> / </small> 5 </p>
-                </div>
-          </a>
-        </div>
+        <p class="text-center">Listado de los pascientes que se encuentran registrados</p>
+        
+<style type="text/css">
+  .avatar-pasciente:hover{
+    background-color: transparent !important;
+  }
+</style>
+    <div>
+        <div>
+            
+            <div class="row">
+              <div class="col-md-12">
+              </div>
+            </div>
+            <% @patients.each do |patient| %>
+            <div class="row">
+                
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<div>
+  <div class="row">
+      <div class="col-md-12">
+      <div class="panel panel-success">
+            <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <h2 class="text-primary"><b><span class="glyphicon glyphicon-user"></span> <%= patient.first_name %></b></h2>
+                            <p><strong><span class="glyphicon glyphicon-ok-circle"></span>About: </strong>Page for Web Designer</p>
+                            <p><strong><span class="glyphicon glyphicon-certificate"></span>Hobbies: </strong>write rap, listen to rap music</p>
+                            <p><strong><span class="glyphicon glyphicon-thumbs-up"></span>Skills: </strong>
+                                <span class="label label-info tags">html5</span> 
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                            </p>
+                        </div><!--/col-->          
+                        <div class="col-xs-12 col-sm-4 text-center">
+                                <img src="http://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" style="width:100px;height:100px; border-radius: 55px;" alt="" class="center-block img-circle img-responsive profile-img">
+                               
+                        </div><!--/col-->
+
+                                                <div class="col-xs-12 col-sm-4">
+                            <h2></h2>                    
+                            <p></p>
+                            <button type="button" class="btn btn-default btn-block"><span class="fa fa-list-alt"></span> <%= link_to 'Historias Clinicas(' + patient.clinic_histories.count.to_s + ')' , patient_clinic_histories_path(patient) %> </button>  
+                        </div><!--/col-->
+
+
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>35</strong></h2>                    
+
+<style type="text/css">
+    .crud{
+        color:white !important;
+    }
+</style>
+
+                            <%= link_to patient, class: "btn btn-info btn-block crud" do %>
+                                <i class="fa fa-user"> Ver</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+
+<div class="col-xs-12 col-sm-4">
+                            <h2><strong> 10,7K </strong></h2>                    
+
+
+
+
+                            <%= link_to edit_patient_path(patient), class: "btn btn-success btn-block crud" do %>
+                                <i class="fa fa-user"> Editar</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+<div class="col-xs-12 col-sm-4">
+                            <h2><strong> 10,7K </strong></h2>                    
+                            
+                            <%= link_to patient, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-danger btn-block crud" do %>
+                                <i class="fa fa-user"> Eliminar</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+                    </div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+    </div>
+  </div>
+</div>                                        
+
+<style type="text/css">
+    
+.profile-img{box-shadow: 0 5px 15px rgba(0,0,0,.5)}
+</style>
+
+
+
+            </div><!-- End row -->
+            <% end %>
+                              <%= link_to 'Nuevo Pasciente', new_patient_path %>
+
+        </div><!-- End container -->
+    </div>
+
+<style type="text/css">
+  /**** BASE ****/
+body {
+    color: #888;   
+}
+a {
+    color: #03a1d1;
+    text-decoration: none!important;
+}
+
+/**** LAYOUT ****/
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+    font-size: .9em;
+}
+.fnt-lighter {
+    color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px;
+    }
+}
+
+</style>
         </div>
     </div>
 </div>

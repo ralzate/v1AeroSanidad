@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   mount_uploader :picture, PictureUploader
 
-  validates :password, presence: true, length: { minimum: 3 }, confirmation: true, if: :new_user?
+  validates :password,  confirmation: true, if: :new_user?
 
 
   class << self

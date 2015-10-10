@@ -7,7 +7,6 @@
             <div class="panel-body" >
 
               <%= form_for(@user, html: { multipart: true }) do |f| %>
-                <%= render 'shared/errors' %>
 
                   <div class="container">
                       <div class="login-container">
@@ -73,7 +72,7 @@
 
                               <div class="col-md-5">   
                                 <div class="form-group">
-                                  <%= f.text_field :medical_record, class: 'ng-binding', required: true, placeholder: 'Registro Medico' %>
+                                  <%= f.text_field :medical_record, class: 'ng-binding form-control', required: true, placeholder: 'Registro Medico' %>
                                 </div>
                               </div>
                             </div>
@@ -93,13 +92,13 @@
                             <div class="row">
                               <div class="col-md-5">   
                               <div class="form-group">
-                                <%= f.password_field :password, class: 'form-control', id: 'password1', placeholder: 'Contraseña' %>
+                                <%= f.hidden_field :password, class: 'form-control', id: 'password1', placeholder: 'Contraseña' %>
                               </div>
                              
 
                               <div class="form-group">
                                 <div class="col-md-5">   
-                                <%= f.password_field :password_confirmation, class: 'form-control', id: 'password2', placeholder: 'Confirma tu Contraseña' %>
+                                <%= f.hidden_field :password_confirmation, class: 'form-control', id: 'password2', placeholder: 'Confirma tu Contraseña' %>
                               </div><br/><br/>
                               </div>
                             </div>

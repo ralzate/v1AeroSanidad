@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   private
   def not_authenticated
-    flash[:danger] = "Please log in first!"
+    flash[:danger] = "No Tienes Permiso para esto"
     redirect_to login_path
   end
   

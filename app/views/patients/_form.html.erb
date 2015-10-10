@@ -2602,8 +2602,6 @@ Description: A Beautiful, Professional and Multipurpose Theme Made by FourGrafx<
   .navbar-nav > li > a:hover,.navbar-nav > li > a:focus {color: #f7505a;}
 }
 
-/* background color */
-.mega-menu-list > li.active > a, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .fancy-title span:after, .text-center.fancy-title span:after, .text-right.fancy-title span:after, .carousel .owl-controls .owl-buttons div, .carousel .owl-controls .owl-page span, .btn-primary, .btn-primary.btn-alt:hover, .btn-primary.btn-alt:focus, .btn-primary.btn-alt:active, .btn-primary.btn-alt.active, .open .dropdown-toggle.btn-primary.btn-alt, .progress-bar, hr.hr-fancy:after, .label-primary, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .pricing-table .pricing-table-head .pricing-head-title, .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, .blog-post .blog-post-side .blog-post-date, ul#filters li a.filter.selected, .colio-theme-gfx .colio-close, .colio-theme-gfx .colio-navigation a, .nav-tabs.tabs-alt > li.active > a:after, .accordion.accordion-alt .accordion-toggle, .accordion.accordion-alt .accordion-toggle.collapsed:hover, .overlay-bg, .o-tooltip-inner, .cl-effect-2 a::before, .cl-effect-2 a::after, .cl-effect-5 a::before, .cl-effect-5 a::after, .cl-effect-6 a::before, .cl-effect-6 a::after  {background-color: #f7505a;}
 
 /* border color */
 
@@ -2693,41 +2691,158 @@ a:hover, a:focus, .social-top a:hover, .social-top a:focus, .top-menu a:hover, .
               <div class="row">
 
                     <div class="col-md-12">
-                      <h2 class="fancy-title"><span>Contact Form</span></h2>
             
                         <!-- Form -->
-            <form class="form-horizontal" role="form">
+            <%= simple_form_for(@patient, :html => { :class => 'form-horizontal' }) do |f| %>
+
               <div class="form-group">
-                <div class="col-sm-6">
-                  <input type="name" class="form-control" id="inputName" placeholder="Name">
-                </div>
-                <div class="col-sm-6">
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                </div>    
-                <div class="col-sm-12">
-                  <input type="message" class="form-control" id="inputEmail3" placeholder="Subject">
-                </div> 
-                <div class="col-sm-12">
-                  <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-                </div> 
-                <div class="col-sm-12">
-                  <a type="submit" class="btn btn-primary center-block">Send Message</a>
+                
+                 <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :first_name, class: 'form-control', required: true, placeholder: 'Primer Nombre' %>
                 </div>
               </div>
-            </form>                        
-                        <!-- /Form --> 
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :second_name, class: 'form-control', required: true, placeholder: 'Segundo Nombre' %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+
+
+            <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :first_surname, class: 'form-control', required: true, placeholder: 'Primer APellido' %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :second_surname, class: 'form-control', required: true, placeholder: 'Segundo APellido' %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+             <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :email, class: 'form-control', required: true, placeholder: 'Email' %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                  <%= f.input :type_document,
+                    prompt:       'Seleccionar un Documento',
+                    collection: @patient.select_document.sort,
+                    error: false, label: false, 
+                    input_html:   {class: 'form-control'} %>
+                     <%= f.text_field :document, class: 'form-control', required: true, placeholder: 'Identificacion' %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.input :gender,
+                    prompt:       'Seleccionar un Genero',
+                    collection: @patient.select_genre.sort,
+                    error: false, label: false, 
+                    input_html:   {class: 'form-control'} %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                <%= f.input :blood_type,
+                    prompt:       'Seleccionar un Tipo de Sangre',
+                    collection: @patient.select_blood.sort,
+                    error: false, label: false, 
+                    input_html:   {class: 'form-control'} %>
+                  
+                </div>
+              </div>
+            </div>
+            <br/>
+
+             <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :profession, class: 'form-control', required: true, placeholder: 'Profesión' %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                  <%= f.input :gender,
+                    prompt:       'Seleccionar un Pais',
+                    collection: @patient.select_country.sort,
+                    error: false, label: false, 
+                    input_html:   {class: 'form-control'} %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+             <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.collection_select :arl_id, Arl.all, :id, :name, :prompt => "Tipo Arl"   %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                  <div>
+                    <%= f.collection_select :eps_id, Eps.all, :id, :name, :prompt => "Tipo Eps"   %>
+                  </div>
+              </div>
+            </div>
+            <br/>
+
+                        <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :address, class: 'form-control', required: true, placeholder: 'Dirección' %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                  <%= f.text_field :condition, class: 'form-control', required: true, placeholder: 'Condición' %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <div class="row">
+              <div class="col-md-6">   
+                <div>
+                  <%= f.collection_select :city_id, City.all, :id, :name, :prompt => "Ciudades"   %>
+                </div>
+              </div>
+              <div class="col-md-6">   
+                <div>
+                    <%= f.collection_select :user_id, User.all, :id, :name, :prompt => "Usuarios"   %>
+                </div>
+              </div>
+            </div>
+            <br/>
+
+            <%= f.submit "Guardar Pasciente", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            patients_path, :class => 'btn btn-default' %>
+
+
+
+              </div>
+            <% end %>                        
                                                
-                        <div class="white-space space-small"></div>
                     </div>
         </div>               
       
-              <div class="white-space space-medium"></div>  
             </div>
-      <!-- /Container -->
- 
-          <!-- Map -->
-            <div class="gmap-wrapper"><div id="google-map"></div></div>
-            <!-- /Map -->
+
                                    
     </div>
     <!-- /Main Container -->      
