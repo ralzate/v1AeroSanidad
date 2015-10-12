@@ -74,46 +74,59 @@ function goBack() {
                               <div class="col-md-6">   
                                 <div class="form-group">
                                   <%= f.text_field :quirurgicos, class: 'form-control', required: true, placeholder: 'Quirurgicos' %>
+                                </div>
+                              </div>
+                              <div class="col-md-6">   
+                                <div class="form-group">
                                   <%= f.text_field :quirurgicos_description, class: 'form-control', required: true, placeholder: 'Quirurgicos Descripción',  id: 'Aeropuerto'  %>
                                 </div>
                               </div>
+                            </div>  
 
 
 
-
+                            <div class="row">
                               <div class="col-md-6">   
                                 <div class="form-group">
                                   <%= f.text_field :farmacologicos, class: 'ng-binding form-control', required: true, placeholder: 'farmacologicos' %>
                                 </div>
                               </div>
-                            </div>
 
-                            <div class="row">
                               <div class="col-md-6">   
                                 <div class="form-group">
                                   <%= f.text_field :farmacologicos_description, class: 'form-control', required: true, placeholder: 'Farmacologicos Descripción' %>
                                 </div>
                               </div>
+                            </div>
+
+                            <div class="row">
                               <div class="col-md-6">   
                                 <div class="form-group">
                                   <%= f.text_field :alergicos, class: 'form-control', required: true, placeholder: 'alergicos' %>
                                 </div>
                               </div>
-                            </div>
-                            <div class="row">
                               <div class="col-md-6">   
-                              <div class="form-group">
+                                <div class="form-group">
                                   <%= f.text_field :alergicos_description, class: 'form-control', required: true, placeholder: 'alergicos_description' %>
+                                </div>
                               </div>
-                             
+                            </div>
+                                
+                            <div class="row"> 
                               <div class="col-md-6">   
                               <div class="form-group">
-                                <%= f.text_field :toxicos, class: 'form-control', required: true, placeholder: 'toxicos_description' %>
+                                <%= f.text_field :toxicos, class: 'form-control', required: true, placeholder: 'Toxico' %>
+                              </div><br/><br/>
+                              </div>
+                              <div class="col-md-6">   
+                              <div class="form-group">
+                                <%= f.text_field :toxicos_description, class: 'form-control', required: true, placeholder: 'Tixicos Descripción' %>
                               </div><br/><br/>
                               </div>
                             </div>
+                             
                             </div>
-                            <br/>
+                            </div>
                             <div class="row">
                               <div class="col-md-6"> 
                               <%= f.submit 'Enviar!', class: 'btn btn-info btn-block login' %>

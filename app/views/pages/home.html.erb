@@ -2,103 +2,6 @@
 <% if current_user %>
 
 
-<div class="container">
-  <div class="row">
-  </div>
-    
-    <div class="row">
-    
-    <div class="col-md-12">       <!-- Standard button -->
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary ribbon">Encuentra el Pasciente Buscandolo en la opción de abajo</button>
-
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-</div>
-
-
-    
- 
-    </div>
-    
-    
-</div>
-
-
-<style type="text/css">
-  
-/*Remove that CSS*/
-.col-md-3 {
-    margin-left:5%;
-    }
-/*Remove that CSS*/
-
-
-
-button {
-  margin: 20px 0;
-  line-height: 34px;
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-  outline:none !important;
-  width:100%;
-}
-
-button:active {
-
-  outline:none;
-}
-
-button.ribbon {
-  
-  outline:none;
-  outline-color: transparent;
-}
-button.ribbon:before, button.ribbon:after {
-  top: 5px;
-  z-index: -10;
-}
-button.ribbon:before {
-  border-color: #53dab6 #53dab6 #53dab6 transparent;
-  left: -25px;
-  border-width: 17px;
-}
-button.ribbon:after {
-  border-color: #53dab6 transparent #53dab6 #53dab6;
-  right: -25px;
-  border-width: 17px;
-}
-
-button:before, button:after {
-  content: '';
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-style: solid;
-  border-width: 0;
-  outline:none;
-}
-
-button.btn-default:before {
-  border-color: #757575 #757575 #757575 transparent;
-    }
-    button.btn-default:after {
-  border-color: #757575 transparent #757575 #757575;
-    }
-    
-    
-    
-    button.btn-primary:before {
-  border-color: #2e6da4 #2e6da4 #2e6da4 transparent;
-    }
-    button.btn-primary:after {
-  border-color: #2e6da4 transparent #2e6da4 #2e6da4;
-    }
-    
-
-</style>
 
 
 
@@ -107,118 +10,7 @@ button.btn-default:before {
 
 
 
-<%= form_tag request.path, :method => 'get', :class => 'navbar-form navbar-left' do %>
-<%= content_tag :label do %>
-<%= text_field_tag :search, params[:search], :placeholder => "Encuentre su Producto", :class => 'form-control' %>
-<%= submit_tag "Consultar", :name => nil %>
-<% end %>
-<% end %>
 
-<br/><br/><br/>
-<% if Patient.search(params[:search]).blank? %>
-
-
-<div class="col-md-12 col-sm-12">
-        <div class="panel panel-default">
-           <div class="panel-heading"><a class="pull-right" href="#">El Pasciente que Buscas no se encuentra registrador</a> <h4></h4></div>
-        <div class="panel-body">
-              <div class="row">
-                <div class="col-xs-4"><a href="http://localhost:3000/" class="btn btn-default center-block">Buscar de nuevo</a></div>
-                <div class="col-xs-4"><%= link_to 'Agregar un nuevo Pasciente', new_patient_path %></div>
-              </div>
-              <br>
-              
-              
-              
-            </div>
-         </div> 
-    </div>                    
-
-<% end %>
-
-
-
-
-<style type="text/css">
-  #custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
-</style>
-
-
-
-
-
-<div class="container">
-
-
-
-    <div class="row">
-        <div class="col-lg-12">
-
-
-
-
-        </div>
-    </div>
-
-    <% @patients.each do |patient| %>
-    <div class="row">
-        <div class="searchable-container">
-            <div class="items col-xs-12 col-sm-12 col-md-12 col-lg-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                    <h3>Nombres: <%= patient.first_name %> <%= patient.second_name %></h3>
-                    <h4>Apellidos: <%= patient.first_name %> <%= patient.second_name %></h4>
-                    <h5>Documento: <%= patient.document %></h5>
-                    <span>Correo: <%= patient.email %></span>
-                    <span>Condition: <%= patient.condition %></span>
-                    <span>Eps: <%= patient.eps %></span>
-                    <span>Arl: <%= patient.arl %></span>
-
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <% end %>
-
-</div>
 
 
 <br />
@@ -252,6 +44,252 @@ button.btn-default:before {
 }
 </style>
 
+
+
+
+<div >
+    <div>
+        <div class="well">
+        <h1 class="text-center">Listado de Pascientes</h1>
+        <p class="text-center">Listado de los pascientes que se encuentran registrados</p>
+ 
+
+<%= form_tag request.path, :method => 'get', :class => 'navbar-form navbar-left' do %>
+<%= content_tag :label do %>
+<%= text_field_tag :search, params[:search], :placeholder => "Encuentre El Pasciente", :class => 'form-control' %>
+<%= submit_tag "Consultar", :name => nil %>
+<% end %>
+<% end %>
+
+<br/><br/><br/>
+<% if Patient.search(params[:search]).blank? %>
+
+
+<div class="col-md-12 col-sm-12">
+        <div class="panel panel-default">
+           <div class="panel-heading"><a class="pull-right" href="#">El Pasciente que Buscas no se encuentra registrador</a> <h4></h4></div>
+        <div class="panel-body">
+              <div class="row">
+                <div class="col-xs-4"><a href="http://localhost:3000/" class="btn btn-default center-block">Buscar de nuevo</a></div>
+                <div class="col-xs-4"><%= link_to 'Agregar un nuevo Pasciente', new_patient_path %></div>
+              </div>
+              <br>
+              
+              
+              
+            </div>
+         </div> 
+    </div>                    
+
+<% end %>
+
+
+
+<style type="text/css">
+  .avatar-pasciente:hover{
+    background-color: transparent !important;
+  }
+</style>
+    <div>
+        <div>
+            
+            <div class="row">
+              <div class="col-md-12">
+              </div>
+            </div>
+            <% @patients.each do |patient| %>
+            <div class="row">
+                
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+      <div class="panel panel-success">
+            <div class="panel-body">
+                    <div class="row">
+                      
+
+
+                        <div class="col-xs-12 col-sm-8">
+                            <h2 class="text-primary"><b><span class="glyphicon glyphicon-user"></span> <%= patient.first_name %> <%= patient.second_name %> <%= patient.first_surname %> <%= patient.second_surname %></b></h2>
+                            <p><strong><span class="glyphicon glyphicon-list-alt"></span> Email: </strong> <%= patient.email %></p>
+                            <p><strong><span class="glyphicon glyphicon-certificate"></span>Hobbies: </strong>write rap, listen to rap music</p>
+                            <p><strong><span class="glyphicon glyphicon-thumbs-up"></span>Skills: </strong>
+                                <span class="label label-info tags">html5</span> 
+                                <span class="label label-info tags">css3</span>
+                                <span class="label label-info tags">jquery</span>
+                                <span class="label label-info tags">bootstrap3</span>
+                            </p>
+                        </div><!--/col-->   
+
+
+                        <div class="col-xs-12 col-sm-4 text-center">
+                                <img src="http://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" style="width:100px;height:100px; border-radius: 55px;" alt="" class="center-block img-circle img-responsive profile-img">
+                               
+                        </div><!--/col-->
+
+                                                <div class="col-xs-12 col-sm-4">
+                            <h2></h2>                    
+                            <p></p>
+                            <button type="button" class="btn btn-default btn-block"><span class="fa fa-list-alt"></span> <%= link_to 'Historias Clinicas(' + patient.clinic_histories.count.to_s + ')' , patient_clinic_histories_path(patient) %> </button>  
+                        </div><!--/col-->
+
+
+                        <div class="col-xs-12 col-sm-4">
+                            <h2><strong>35</strong></h2>                    
+
+<style type="text/css">
+    .crud{
+        color:white !important;
+    }
+</style>
+
+                            <%= link_to patient, class: "btn btn-info btn-block crud" do %>
+                                <i class="fa fa-user"> Ver</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+
+<div class="col-xs-12 col-sm-4">
+                            <h2><strong> 10,7K </strong></h2>                    
+
+
+
+
+                            <%= link_to edit_patient_path(patient), class: "btn btn-success btn-block crud" do %>
+                                <i class="fa fa-user"> Editar</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+<div class="col-xs-12 col-sm-4">
+                            <h2><strong> 10,7K </strong></h2>                    
+                            
+                            <%= link_to patient, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-danger btn-block crud" do %>
+                                <i class="fa fa-user"> Eliminar</i>
+                            <% end %>
+
+                        </div><!--/col-->
+
+                    </div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+    </div>
+  </div>
+</div>                                        
+
+<style type="text/css">
+    
+.profile-img{box-shadow: 0 5px 15px rgba(0,0,0,.5)}
+</style>
+
+
+
+            </div><!-- End row -->
+            <% end %>
+                              <%= link_to 'Nuevo Pasciente', new_patient_path %>
+
+        </div><!-- End container -->
+    </div>
+
+<style type="text/css">
+  /**** BASE ****/
+body {
+    color: #888;   
+}
+a {
+    color: #03a1d1;
+    text-decoration: none!important;
+}
+
+/**** LAYOUT ****/
+.list-inline>li {
+    padding: 0 10px 0 0;
+}
+.container-pad {
+    padding: 30px 15px;
+}
+
+
+/**** MODULE ****/
+.bgc-fff {
+    background-color: #fff!important;
+}
+.box-shad {
+    -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+    border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+    font-size: .9em;
+}
+.fnt-lighter {
+    color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+    padding: 10px!important;
+}
+.mrg-0 {
+    margin: 0!important;
+}
+.btm-mrg-10 {
+    margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+    margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+    color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+    #property-listings .property-listing {
+        padding: 5px!important;
+    }
+    #property-listings .property-listing a {
+        margin: 0;
+    }
+    #property-listings .property-listing .media-body {
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #property-listings .property-listing img {
+        max-width: 180px;
+    }
+}
+
+</style>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    a.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.stars {
+    margin:20px auto 1px;    
+}
+</style>
 
 
 
