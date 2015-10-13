@@ -1,4 +1,4 @@
-json.array!(@clinic_histories) do |clinic_history|
-  json.extract! clinic_history, :id, :city, :department, :user_id, :cove, :mobiel_service, :airport, :type_service, :patient_id, :origin, :destination, :company, :accompanist_name, :relationship, :phone, :reason_for_consultation, :current_illness
-  json.url clinic_history_url(clinic_history, format: :json)
+json.array!(@pets) do |pet|
+  json.extract! pet, :id, :name, :colour, :owner_name, :identifying_characteristics, :special_instructions
+  json.url pet_url(pet, format: :json)
 end

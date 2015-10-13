@@ -1,0 +1,23 @@
+<%= form_for @clinic_history, method: :put, url: wizard_path do |f| %>
+
+
+  <fieldset>
+    <legend>Pet Characteristics</legend>
+
+    <div>
+      <%= f.label :mobiel_service %>
+      <%= f.text_field :mobiel_service %>
+    </div>
+
+    <div>
+      <%= f.label :cove %>
+      <%= f.text_field :cove %>
+    </div>
+
+    <div>
+      <%= f.submit 'Next Step' %>
+    </div>
+
+  </fieldset>
+<% end %>
+    <button><a href="javascript:history.back()">1</a> </button>

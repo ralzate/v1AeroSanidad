@@ -16,8 +16,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :profession
       t.integer :blood_type
       t.integer :nacionality
-      t.references :eps, index: true, foreign_key: true
-      t.references :arl, index: true, foreign_key: true
+      # t.references :eps, index: true, foreign_key: true
+      #t.references :arl, index: true, foreign_key: true
       t.string :address
       t.integer :condition
       t.references :city, index: true, foreign_key: true

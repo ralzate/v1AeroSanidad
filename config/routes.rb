@@ -1,4 +1,5 @@
-Rails.application.routes.draw do
+PetThing::Application.routes.draw do
+
 
   resources :users, :path => "usuarios"
   resources :roles, :path => "roles"
@@ -13,23 +14,10 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'pages/help'
 
-  root to: 'pages#home'
 
 
-  resources :patients , :path => "pascientes" do
-         resources :clinic_histories, :path => "historias_clinicas"
-      member do
-      get :activate
-    end
-  end
 
 
-  resources :clinic_histories, :path => "historias_clinicas" do
-          resources :personal_histories, :path => "historias_personales"
-          resources :system_reviews, :path => "revision_por_sistemas"
-          resources :physical_exams, :path => "examenes_fisicos"
-          resources :additional_informations, :path => "informacion_adicional"
-      end 
   
   resources :products
   resources :sessions
@@ -58,6 +46,15 @@ Rails.application.routes.draw do
   get       'login',  to:   'sessions#new',       as: :login
   post      'login',  to:   'sessions#create'
   delete    'logout', to:   'sessions#destroy',   as: :logout
+
+
+
+  resources :clinic_histories, only: [:new, :create, :index, :destroy] do
+    resources :steps, only: [:show, :update], controller: 'clinic_history/steps'
+  end
+
+  root to: 'clinic_histories#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
