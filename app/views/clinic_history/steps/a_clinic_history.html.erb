@@ -1,0 +1,260 @@
+
+<div class="container">
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+            <p>Historía Clinica</p>
+        </div>
+        
+    </div>
+</div>
+<%= form_for @clinic_history, method: :put, url: wizard_path do |f| %>
+    <div>
+        <div >
+            <div >
+                <legend>
+                <div align="center">Nueva Historía Clinica, Por favor Completa los Campos</div>
+                </legend>
+                <div class="error_messages">
+                  <% f.object.errors.full_messages.each do |error| %>
+                    <p><%= error %></p>
+                  <% end %>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Ciudad</label>
+                        <br />
+                        <%= f.text_field :city, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Departamento</label>
+                        <%= f.text_field :department, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Cove</label>
+                        <br />
+                        <%= f.text_field :cove, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Servicio Mobil</label>
+                        <%= f.text_field :mobiel_service, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Aeropuerto</label>
+                        <br />
+                        <%= f.text_field :airport, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Tipo Servicio</label>
+                        <%= f.text_field :type_service, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Pasciente</label>
+                        <br />
+                        <%= f.text_field :patient_id, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Origen</label>
+                        <%= f.text_field :origin, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Destino</label>
+                        <br />
+                        <%= f.text_field :destination, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Compañia</label>
+                        <%= f.text_field :company, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Nombre Acompañante</label>
+                        <br />
+                        <%= f.text_field :accompanist_name, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Parentesco</label>
+                        <%= f.text_field :relationship, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Telefono</label>
+                        <br />
+                        <%= f.text_field :phone, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Razón de la consulta</label>
+                        <%= f.text_field :reason_for_consultation, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">Enfermedad Actual</label>
+                        <br />
+                        <%= f.text_field :current_illness, class: 'form-control' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    
+                  </div>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+
+                </div>
+<%= f.submit 'Proximo Paso', :class => 'btn btn-primary nextBtn btn-lg' %>
+            </div>
+        </div>
+    </div>
+    
+ 
+<% end %>
+</div>
+
+<style type="text/css">
+  body{ 
+    margin-top:40px; 
+}
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+</script>
+

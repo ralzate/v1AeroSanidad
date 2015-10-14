@@ -48,12 +48,13 @@ PetThing::Application.routes.draw do
   delete    'logout', to:   'sessions#destroy',   as: :logout
 
 
-
-  resources :clinic_histories, only: [:new, :create, :index, :destroy] do
-    resources :steps, only: [:show, :update], controller: 'clinic_history/steps'
+  resources :patients, :path => "pascientes" do
+    resources :clinic_histories, :path => "historias_clinicas", only: [:new, :create, :index, :destroy, :show, :edit] do
+      resources :steps, only: [:show, :update], controller: 'clinic_history/steps'
+    end
   end
+  root to: 'pages#home'
 
-  root to: 'clinic_histories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

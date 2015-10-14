@@ -56,6 +56,7 @@ class CreateClinicHistories < ActiveRecord::Migration
       t.boolean :cardiovascular
       t.text :cardiovascular_description
       t.boolean :respiratory
+      t.text :respiratory_description
       t.boolean :abdominal
       t.text :abdominal_description
       t.boolean :genito_urinario
@@ -76,9 +77,7 @@ class CreateClinicHistories < ActiveRecord::Migration
       t.string :sat_of_o_ambiente
       t.string :sat_of_o_supplementary
       t.string :temperature
-      t.string :weight
-      t.string :in
-      t.string :kilograms
+      t.string :weight_in_kilograms
       t.string :height_in_centimeters
       t.string :glucose
       t.string :measurement

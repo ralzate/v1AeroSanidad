@@ -5,7 +5,7 @@ class ClinicHistory < ActiveRecord::Base
   belongs_to :patient
 
   cattr_accessor :form_steps do
-    %w(identity characteristics instructions)
+    %w(a_clinic_history b_antecedentes c_revision_sistemas d_examen_fisico e_info_adicional)
   end
 
   attr_accessor :form_step

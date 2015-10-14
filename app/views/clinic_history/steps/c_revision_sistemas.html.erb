@@ -1,0 +1,324 @@
+
+
+
+
+
+
+
+<div class="container">
+<div class="stepwizard">
+    <div class="stepwizard-row ">
+
+        <div class="stepwizard-step">
+            <a href="javascript:history.back()" type="button" class="btn btn-info btn-circle">2</a>
+            <p>Antecedentes Personales</p>
+        </div>
+
+
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-success btn-circle" disabled="disabled">3</a>
+            <p>Revisión Por Sistemas</p>
+        </div>
+
+
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle" disabled="disabled">4</a>
+            <p>Examen Fisico</p>
+        </div>
+
+    </div>
+</div>
+<br/>
+<%= form_for @clinic_history, method: :put, url: wizard_path do |f| %>
+    <div>
+        <div >
+            <div >
+                <legend>
+                <div align="center">Nueva Revisión Por Sistemas, Por favor Completa los Campos</div>
+                </legend>
+                <span>Anormales</span> <span class="glyphicon glyphicon-remove" style="color: #F0AD4E;"></span>&nbsp;
+                <span>Normales</span> <span class="glyphicon glyphicon-ok" style="color: #449d44;"></span>
+                <div class="error_messages">
+                  <% f.object.errors.full_messages.each do |error| %>
+                    <p><%= error %></p>
+                  <% end %>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">cardiovascular</label>
+                        <br />
+
+                        <%= f.check_box :cardiovascular, class: 'form-control js-switch' %>
+
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">cardiovascular_description</label>
+                        <%= f.text_area :cardiovascular_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">respiratory</label>
+                        <br />
+                        <%= f.check_box :respiratory, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">respiratory_description</label>
+                        <%= f.text_area :respiratory_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">abdominal</label>
+                        <br />
+                        <%= f.check_box :abdominal, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">abdominal_description</label>
+                        <%= f.text_area :abdominal_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">genito_urinario</label>
+                        <br />
+                        <%= f.check_box :genito_urinario, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">genito_urinario_description</label>
+                        <%= f.text_area :genito_urinario_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">neurological</label>
+                        <br />
+                        <%= f.check_box :neurological, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">neurological_description</label>
+                        <%= f.text_area :neurological_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">mental</label>
+                        <br />
+                        <%= f.check_box :mental, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">mental_description</label>
+                        <%= f.text_area :mental_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">sense_organ</label>
+                        <br />
+                        <%= f.check_box :sense_organ, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">sense_organ_description</label>
+                        <%= f.text_area :sense_organ_description, class: 'form-control'  %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">skeletal_muscle</label>
+                        <br />
+                        <%= f.check_box :skeletal_muscle, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">skeletal_muscle_description</label>
+                        <br />
+                        <%= f.text_area :skeletal_muscle_description, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">skin_and_appendages</label>
+                        <br />
+                        <%= f.check_box :skin_and_appendages, class: 'form-control  js-switch' %>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label">skin_and_appendages_description</label>
+                        <br />
+                        <%= f.text_area :skin_and_appendages_description, class: 'form-control' %>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+              <%= f.submit 'Proximo Paso', :class => 'btn btn-primary nextBtn btn-lg' %>
+            </div>
+        </div>
+    </div>
+    
+ 
+<% end %>
+</div>
+
+<style type="text/css">
+  body{ 
+    margin-top:40px; 
+}
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+</style>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+</script>
+
+
+<script type="text/javascript">
+var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+elems.forEach(function(html) {
+  var switchery = new Switchery(html, { color: '#F0AD4E', secondaryColor: '#286090', jackColor: '#FFFFFF', jackSecondaryColor: '#c8ff77' });
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
