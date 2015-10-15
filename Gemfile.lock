@@ -1,19 +1,4 @@
 GIT
-  remote: git://github.com/jim/carmen-rails.git
-  revision: 50ebda9ac696306abdfc6ebd75af06cd79de2ded
-  specs:
-    carmen-rails (1.0.1)
-      carmen (~> 1.0.0)
-      rails
-
-GIT
-  remote: git://github.com/seangaffney/carmen.git
-  revision: 5e036c882d711abdbb52a3ff135d803d540eef15
-  specs:
-    carmen (1.0.0)
-      unicode_utils (~> 1.4.0)
-
-GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 22e58bc75a1581d8f7a0e44a936d877865356a9c
   specs:
@@ -472,7 +457,6 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicode_utils (1.4.0)
     validates_email_format_of (1.6.3)
       i18n
     web-console (2.2.1)
@@ -499,8 +483,6 @@ DEPENDENCIES
   bootstrap_form
   brakeman
   byebug
-  carmen!
-  carmen-rails (~> 1.0.0)!
   carrierwave
   chardinjs-rails
   coffee-rails (~> 4.1.0)

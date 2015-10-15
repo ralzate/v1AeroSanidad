@@ -20,6 +20,13 @@
  */
 
 
+
+.navbar-custom{
+  background-color: #0080C5 !important;
+}
+
+
+
 /* Override Bootstrap 3 font locations */
 @font-face {
   font-family: 'Glyphicons Halflings';

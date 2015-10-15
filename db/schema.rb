@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20151012235909) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cities", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "department_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "cities", ["department_id"], name: "index_cities_on_department_id", using: :btree
-
   create_table "clinic_histories", force: :cascade do |t|
     t.string   "city"
     t.string   "department"
@@ -146,12 +137,6 @@ ActiveRecord::Schema.define(version: 20151012235909) do
   add_index "clinic_histories", ["patient_id"], name: "index_clinic_histories_on_patient_id", using: :btree
   add_index "clinic_histories", ["user_id"], name: "index_clinic_histories_on_user_id", using: :btree
 
-  create_table "countries", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -167,15 +152,6 @@ ActiveRecord::Schema.define(version: 20151012235909) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
-
-  create_table "departments", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "departments", ["country_id"], name: "index_departments_on_country_id", using: :btree
 
   create_table "epses", force: :cascade do |t|
     t.string   "name"
@@ -254,13 +230,11 @@ ActiveRecord::Schema.define(version: 20151012235909) do
     t.integer  "nacionality"
     t.string   "address"
     t.integer  "condition"
-    t.integer  "city_id"
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
-  add_index "patients", ["city_id"], name: "index_patients_on_city_id", using: :btree
   add_index "patients", ["user_id"], name: "index_patients_on_user_id", using: :btree
 
   create_table "products", force: :cascade do |t|
@@ -323,14 +297,11 @@ ActiveRecord::Schema.define(version: 20151012235909) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", using: :btree
 
-  add_foreign_key "cities", "departments"
   add_foreign_key "clinic_histories", "patients"
   add_foreign_key "clinic_histories", "users"
-  add_foreign_key "departments", "countries"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "patients", "cities"
   add_foreign_key "patients", "users"
   add_foreign_key "products", "users"
 end

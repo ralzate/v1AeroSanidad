@@ -7,7 +7,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 
 <div>
-<nav class="navbar  navbar-fixed-top" role="navigation" style="background-color: #0080C5 !important">
+<nav class="navbar  navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
   <div>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
       </button>
 
-        <%= link_to image_tag('Logo/logo.png',:size => "100x50", :class =>""), root_path %>
+        <%= link_to image_tag('Logo/logo.png',:size => "120x60", :class =>""), root_path %>
 
     </div>
 
@@ -35,15 +35,6 @@
             <i class="glyphicon glyphicon-signal"> Arles</i><% end %>
         </li>
 
-        <li><%= link_to countries_path, class: "color-blanco" do %>
-            <i class="glyphicon glyphicon-list-alt"> Paises</i><% end %>
-        </li>
-        <li><%= link_to departments_path, class: "color-blanco" do %>
-            <i class="glyphicon glyphicon-th-list"> Departamentos</i><% end %>
-        </li>
-        <li><%= link_to cities_path, class: "color-blanco" do %>
-            <i class="glyphicon glyphicon-road"> Ciudades</i><% end %>
-        </li>
 
                 <% end %>    
 
@@ -55,16 +46,16 @@
             <i class="glyphicon glyphicon-user"> Usuarios</i><% end %>
         </li>
 
-            <li role="presentation" class="dropdown">
-              <a  class="dropdown-toggle  color-blanco" data-toggle="dropdown" role="button"
-              aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><%= link_to 'Inbox', conversations_path %></li>
-                <li><%= link_to 'Profile', current_user %></li>
-                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        <li role="presentation" class="dropdown">
+          <a  class="dropdown-toggle  color-blanco" data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Inbox', conversations_path %></li>
+            <li><%= link_to 'Profile', current_user %></li>
+            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
 
-              </ul>
-            </li>
+          </ul>
+        </li>
         <% end %>    
       </ul>
       
@@ -92,3 +83,14 @@
   </div><!-- /.container-fluid -->
 </nav>
 </div>
+
+
+    <style type="text/css">
+
+
+.navbar-nav>li>a {padding-top: 15px;padding-bottom: 15px; 
+font-family: 'nixie_oneregular', 'Courier New', Courier, monospace; font-size: 18px;}
+
+</style>
+
+<br/><br/>
