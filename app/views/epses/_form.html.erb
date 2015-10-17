@@ -1,32 +1,8 @@
+<%= simple_form_for @eps, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= @eps[:name] %>
 
-<button onclick="goForward()">Arl</button>
-
-<script>
-function goForward() {
-    window.history.forward();
-}
-</script>
-
-
-
-<%= form_for(@eps) do |f| %>
-  <% if @eps.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@eps.errors.count, "error") %> prohibited this eps from being saved:</h2>
-
-      <ul>
-      <% @eps.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                epses_path, :class => 'btn btn-default' %>
 <% end %>

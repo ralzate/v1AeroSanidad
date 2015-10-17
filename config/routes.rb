@@ -1,6 +1,9 @@
 PetThing::Application.routes.draw do
 
 
+  resources :arles
+  resources :epses
+  resources :eps
   resources :users, :path => "usuarios"
   resources :roles, :path => "roles"
   resources :cities, :path => "ciudades"

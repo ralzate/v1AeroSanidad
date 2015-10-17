@@ -1,21 +1,8 @@
-<%= form_for(@arl) do |f| %>
-  <% if @arl.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@arl.errors.count, "error") %> prohibited this arl from being saved:</h2>
+<%= simple_form_for @arl, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= (@arl[:name]) %>
 
-      <ul>
-      <% @arl.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                arles_path, :class => 'btn btn-default' %>
 <% end %>
